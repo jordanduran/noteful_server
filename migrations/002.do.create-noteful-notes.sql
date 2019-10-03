@@ -3,5 +3,5 @@ CREATE TABLE notes(
     note_name TEXT NOT NULL,
     content TEXT,
     date_modified TIMESTAMP DEFAULT NOW() NOT NULL,
-    folder_id INTEGER REFERENCES folders(id)
+    folder_id INTEGER REFERENCES folders(id) ON DELETE CASCADE
 );
