@@ -4,6 +4,8 @@ const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
+const folderRouter = require('./folder-service/folderRouter')
+
 
 const app = express()
 
@@ -16,10 +18,12 @@ app.use(helmet())
 app.use(cors())
 
 app.get('/', (req, res) => {
-    const db = req.app.get('db');
-    db.table('folders').first('id', 'name').then(function(row) { console.log(row); });
+    // const db = req.app.get('db');
+    // db.table('folders').first('id', 'name').then(function(row) { console.log(row); });
     res.send('Hello, world!')
 })
+
+app.use('/', folderRouter);
 
 app.use(function errorHandler(error, req, res, next) {
     let response
