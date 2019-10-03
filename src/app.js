@@ -16,6 +16,8 @@ app.use(helmet())
 app.use(cors())
 
 app.get('/', (req, res) => {
+    const db = req.app.get('db');
+    db.table('folders').first('id', 'name').then(function(row) { console.log(row); });
     res.send('Hello, world!')
 })
 
