@@ -1,5 +1,5 @@
 const express = require('express');
-const notesService = require('./note-service.js.js');
+const notesService = require('./note-service');
 const noteRouter = express.Router();
 const bodyParser = express.json();
 
