@@ -1,11 +1,11 @@
-require('dotenv').config()
-const express = require('express')
-const morgan = require('morgan')
-const cors = require('cors')
-const helmet = require('helmet')
-const { NODE_ENV } = require('./config')
-const folderRouter = require('./folder-service/folder-router')
-const noteRouter = require('./note-service/note-router')
+require('dotenv').config();
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
+const helmet = require('helmet');
+const { NODE_ENV } = require('./config');
+const folderRouter = require('./folder-functionality/folder-router');
+const noteRouter = require('./note-functionality/note-router');
 
 const app = express()
 

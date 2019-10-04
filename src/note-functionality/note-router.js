@@ -1,7 +1,7 @@
 const express = require('express');
-const notesService = require('./note-service.js');
-const noteRouter = express.Router()
-const bodyParser = express.json()
+const notesService = require('./note-service.js.js');
+const noteRouter = express.Router();
+const bodyParser = express.json();
 
 noteRouter
     .route('/')
