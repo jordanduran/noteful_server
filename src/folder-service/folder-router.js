@@ -1,5 +1,5 @@
 const express = require('express');
-const folderServices = require('./folder-service');
+const foldersService = require('./folder-service');
 
 const folderRouter = express.Router();
 
@@ -20,4 +20,4 @@ folderRouter
 
 
 
-modules.export = folderRouter
+module.exports = folderRouter
