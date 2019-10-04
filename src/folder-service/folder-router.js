@@ -29,7 +29,7 @@ folderRouter
 
 folderRouter
     .route('/:id')
-    // get all notes in the folder with the given id
+    // get all notes in the folder with the given folder id
 
 
 
