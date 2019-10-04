@@ -20,4 +20,4 @@ folderRouter
 
 
 
-modules.export = folderRouter
+module.exports = folderRouter;
