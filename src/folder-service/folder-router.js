@@ -1,10 +1,10 @@
 const express = require('express');
-const folderServices = require('./folder-service');
-
+const foldersService = require('./folder-service');
+const bodyParser = express.json();
 const folderRouter = express.Router();
 
 folderRouter
-    .route('/folders')
+    .route('/')
     .get((req, res, next) => {
         const knexInstance = req.app.get('db');
         foldersService.getAllFolders(knexInstance)
@@ -12,6 +12,19 @@ folderRouter
             res.json(folders)
         })
         .catch(next);
+
+    })
+    .post(bodyParser, (req,res,next) =>{
+        const newFolder = {
+            title: req.body.title
+        }
+        const knexInstance = req.app.get('db')
+        foldersService.addNewFolder(knexInstance,newFolder)
+        .then(newFolder => {
+            
+            res.status(201).send(newFolder)
+        })
+        .catch(next)
     })
 
 
