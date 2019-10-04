@@ -27,6 +27,10 @@ folderRouter
         .catch(next)
     })
 
+folderRouter
+    .route('/:id')
+    // get all notes in the folder with the given id
+
 
 
 
