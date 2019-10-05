@@ -1,9 +1,10 @@
 const FOLDERS_TABLE = 'folders';
+const NOTES_TABLE = 'notes';
 const folderServices = { // CRUD OPERATIONS
     getAllFolders(db){ // READ
         return db
             .select('*')
-            .from(FOLDERS_TABLE);
+            .from('folders');
     },
     addNewFolder(db, newFolder){ // CREATE
         return db
@@ -22,6 +23,10 @@ const folderServices = { // CRUD OPERATIONS
             .where({ id })
             .update(newFields)
             .first();
+    },
+    getAllNotesByFolderId(db, folder_id){
+        return db(NOTES_TABLE)
+            .where({ folder_id });
     }
 }
 

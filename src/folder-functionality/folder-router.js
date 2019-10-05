@@ -29,7 +29,15 @@ folderRouter
 
 folderRouter
     .route('/:id')
-    // get all notes in the folder with the given folder id
+    .get((req, res, next) => {
+        const knexInstance = req.app.get('db');
+        const { id } = req.params;
+        foldersService.getAllNotesByFolderId(knexInstance, id)
+            .then((notes) => {
+                res.json(notes);
+            })
+            .catch(next);
+    })
 
 
 
