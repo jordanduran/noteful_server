@@ -95,6 +95,7 @@ describe(`FOLDERS SERVICE TEST`, ()=>{
             return FolderService.getAllNotesByFolderId(db, id)
                 .then((notes)=>{
                     expect(notes).to.eql(expectedNotesArr)
+                    
                 })
         })
     })
