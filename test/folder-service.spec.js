@@ -51,4 +51,18 @@ describe(`FOLDERS SERVICE TEST`, ()=>{
 
     })
 
+    context(`Given there is data in the folders table`, () => {
+        beforeEach(`Inserting data into folders`, () => {
+            return db(FOLDERS_TABLE)
+                .insert(testFolders);
+        })
+        it(` getAllFolders() Returns a folder array`, () => {
+            return FolderService.getAllFolders(db)
+                .then((folders) => {
+                    expect(folders).to.deep.eql(testFolders);
+                })
+        })
+    //     it(`getAllNotesByFolderId when there are no notes in a folder return empty array`, () )
+    // })
+
 });

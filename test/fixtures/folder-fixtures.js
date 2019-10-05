@@ -3,15 +3,15 @@ function makeFoldersArray(){
         [
             {
               "id": 1,
-              "name": "Important"
+              "title": "Important"
             },
             {
               "id": 2,
-              "name": "Super"
+              "title": "Super"
             },
             {
               "id": 3,
-              "name": "Spangley"
+              "title": "Spangley"
             }
           ]
     );
