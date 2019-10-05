@@ -5,7 +5,6 @@ const { makeFoldersArray } = require('./fixtures/folder-fixtures');
 const { makeNotesArray } = require('./fixtures/note-fixtures');
 
 describe(`FOLDERS SERVICE TEST`, ()=>{
-    
     let db;
     const testFolders = makeFoldersArray();
     const testNotes = makeNotesArray();
@@ -94,10 +93,10 @@ describe(`FOLDERS SERVICE TEST`, ()=>{
             const expectedNotesArr = testNotes.filter(note => note.folder_id === id)
             return FolderService.getAllNotesByFolderId(db, id)
                 .then((notes)=>{
-                    expect(notes).to.eql(expectedNotesArr)
-                    
+                    expect(expectedNotesArr).to.deep.eql(notes);
                 })
         })
     })
+    
 
 });
