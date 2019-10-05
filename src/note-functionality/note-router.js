@@ -42,6 +42,17 @@ noteRouter
                 res.json(note)
             })
             .catch(next);
+    })
+    .delete((req, res, next) => {
+        const { id } = req.params;
+        const knexInstance = req.app.get('db');
+        notesService.deleteNote(knexInstance, id)
+            .then((note) => {
+                res
+                    .status(204)
+                    .end();
+            })
+            .catch(next);
     });
     
    

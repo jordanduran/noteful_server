@@ -4,7 +4,7 @@ const app = require('../src/app');
 const { makeFoldersArray } = require('./fixtures/folder-fixtures');
 const { makeNotesArray } = require('./fixtures/note-fixtures');
 
-describe.only(`Notes Service`, ()=>{
+describe(`Notes Service`, ()=>{
     let db;
     const testFolders = makeFoldersArray();
     const testNotes = makeNotesArray();
