@@ -25,7 +25,7 @@ const noteService = {
         return db
             .select('*')
             .from('notes')
-            .where('id', id)
+            .where({ id })
             .first();
     },
 };

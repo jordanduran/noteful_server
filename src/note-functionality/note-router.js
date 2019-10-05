@@ -30,6 +30,15 @@ noteRouter
         const knexInstance = req.app.get('db');
         notesService.getNotesById(knexInstance, id)
             .then(note => {
+                if(!note){
+                    res
+                        .status(404)
+                        .json({
+                            error: {
+                                message: `Note with id:${id} cannot be found`
+                            }
+                        })
+                }
                 res.json(note)
             })
             .catch(next);
